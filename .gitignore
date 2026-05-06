@@ -1,0 +1,19 @@
+# Node dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Text editor
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+
+# Build outputs
+dist/
+build/
