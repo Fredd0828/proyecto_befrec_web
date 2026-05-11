@@ -2354,12 +2354,12 @@ blockquote {
     flex: 0 0 calc(33.333% - 18px); 
     min-width: calc(33.333% - 18px); 
     text-align: center; 
-    padding: var(--space-2xl) var(--space-lg); 
+    padding: var(--space-lg) var(--space-lg); 
     box-sizing: border-box; 
     background: linear-gradient(145deg, #fefefe 0%, #f5f5f5 100%);
     border-radius: var(--radius-xl);
     border: 2px solid transparent;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: relative;
     transition: all var(--transition-base);
 }
@@ -2379,8 +2379,7 @@ blockquote {
 
 .testimonio-card:hover { 
     transform: translateY(-8px); 
-    box-shadow: var(--shadow-xl);
-    border-color: var(--color-gold);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .testimonio-card:hover::before {
@@ -2416,7 +2415,7 @@ blockquote {
     border-radius: var(--radius-full); 
     object-fit: cover; 
     border: 3px solid var(--color-gold);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-sm);
     box-shadow: var(--shadow-sm);
     margin-top: var(--space-xs);
 }
@@ -2425,7 +2424,7 @@ blockquote {
     color: var(--color-yellow); 
     font-size: var(--font-size-sm); 
     letter-spacing: 3px; 
-    margin-bottom: var(--space-md); 
+    margin-bottom: var(--space-sm); 
 }
 
 .testimonios-track { 
@@ -2440,7 +2439,7 @@ blockquote {
     color: var(--color-mid-gray); 
     line-height: 1.7; 
     font-style: italic; 
-    margin-bottom: var(--space-lg); 
+    margin-bottom: var(--space-md); 
     max-width: 300px; 
     margin-left: auto; 
     margin-right: auto; 
