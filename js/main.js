@@ -32,7 +32,7 @@ const BEFREC = {
     email: 'contacto@befrec.com',
     address: 'Cra 88d 6d 27, Bogotá, Colombia',
     phone: '3160444428',
-    mobileBreakpoint: 768,
+    mobileBreakpoint: 950,
 
     // Patrones de validación
     patterns: {
@@ -48,10 +48,12 @@ const BEFREC = {
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
+    initMobileDropdowns();
     initSmoothScroll();
     initFormValidation();
     initScrollAnimations();
     initWhatsAppButton();
+    initTestimonialSlider();
 });
 
 // ============================================
@@ -68,15 +70,6 @@ function initNavigation() {
     if (!navMenu || !menuToggleBtn) return;
 
     menuToggleBtn.addEventListener('click', toggleMenu);
-
-    // Cerrar menú al hacer clic en un enlace (en móvil)
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= BEFREC.mobileBreakpoint) {
-                closeMenu();
-            }
-        });
-    });
 
     // Cerrar menú al redimensionar
     window.addEventListener('resize', () => {
@@ -112,6 +105,47 @@ function closeMenu() {
     navMenu.classList.remove('active');
     menuToggleBtn.setAttribute('aria-expanded', 'false');
     animateMenuIcon(false);
+}
+
+// Mobile dropdown toggling: first tap opens, second tap navigates
+function initMobileDropdowns() {
+    document.querySelectorAll('.nav-dropdown > .nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (window.innerWidth > BEFREC.mobileBreakpoint) return;
+
+            const dropdown = this.parentElement;
+
+            if (dropdown.classList.contains('dropdown-open')) {
+                return; // second click: let the browser follow the href
+            }
+
+            e.preventDefault();
+            // Close any other open dropdown
+            document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(dd => {
+                dd.classList.remove('dropdown-open');
+            });
+            dropdown.classList.add('dropdown-open');
+        });
+    });
+
+    // Close dropdowns when tapping outside
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth > BEFREC.mobileBreakpoint) return;
+        document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(dd => {
+            if (!dd.contains(e.target)) {
+                dd.classList.remove('dropdown-open');
+            }
+        });
+    });
+
+    // Clean up dropdown-open classes on resize to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > BEFREC.mobileBreakpoint) {
+            document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(dd => {
+                dd.classList.remove('dropdown-open');
+            });
+        }
+    });
 }
 
 function animateMenuIcon(open) {
@@ -389,6 +423,96 @@ function trackEvent(eventName, data = {}) {
         return;
     }
     // Integrar con Google Analytics u otro servicio aquí
+}
+
+// ============================================
+// TESTIMONIAL SLIDER - Con efecto infinito
+// ============================================
+
+function initTestimonialSlider() {
+    const slider = document.getElementById('testimoniosSlider');
+    if (!slider) return;
+    const track = document.getElementById('testimoniosTrack');
+    const cards = Array.from(slider.querySelectorAll('.testimonio-card'));
+    const dots = document.querySelectorAll('#testimoniosDots .dot');
+    const prevBtn = document.getElementById('prevTestimonio');
+    const nextBtn = document.getElementById('nextTestimonio');
+    if (cards.length === 0 || !track) return;
+
+    function getVisibleCards() {
+        if (window.innerWidth <= 950) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+    }
+
+    function updateClones() {
+        const clones = track.querySelectorAll('.testimonio-clone');
+        clones.forEach(c => c.remove());
+        const visible = getVisibleCards();
+        for (let i = 0; i < visible; i++) {
+            const clone = cards[i].cloneNode(true);
+            clone.classList.add('testimonio-clone');
+            track.appendChild(clone);
+        }
+    }
+    updateClones();
+
+    let currentIndex = 0;
+    const totalCards = cards.length;
+
+    function getTotalSlides() {
+        return Math.ceil(totalCards / getVisibleCards());
+    }
+
+    function goToSlide(index, animate) {
+        if (animate === undefined) animate = true;
+        const visible = getVisibleCards();
+        const trackWidth = track.parentElement.offsetWidth;
+        const gap = 24;
+        const cardWidth = (trackWidth - (visible - 1) * gap) / visible;
+        const groupWidth = visible * (cardWidth + gap);
+        const totalSlides = getTotalSlides();
+
+        track.style.transition = animate ? 'transform 0.5s ease' : 'none';
+
+        if (index >= totalSlides) {
+            track.style.transition = 'transform 0.5s ease';
+            track.style.transform = 'translateX(-' + (index * groupWidth) + 'px)';
+            currentIndex = 0;
+            setTimeout(() => {
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(0px)';
+            }, 500);
+        } else {
+            currentIndex = ((index % totalSlides) + totalSlides) % totalSlides;
+            track.style.transform = 'translateX(-' + (currentIndex * groupWidth) + 'px)';
+        }
+        dots.forEach(d => d.classList.remove('active'));
+        if (dots[currentIndex]) dots[currentIndex].classList.add('active');
+    }
+
+    function nextSlide() { goToSlide(currentIndex + 1); }
+    function prevSlide() {
+        if (currentIndex === 0) {
+            goToSlide(getTotalSlides() - 1);
+        } else {
+            goToSlide(currentIndex - 1);
+        }
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goToSlide(i)));
+
+    let touchStartX = 0;
+    slider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+    slider.addEventListener('touchend', e => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) { if (diff > 0) nextSlide(); else prevSlide(); }
+    });
+
+    goToSlide(0, false);
+    window.addEventListener('resize', () => { updateClones(); goToSlide(currentIndex, false); });
 }
 
 // Exponer funciones globalmente
