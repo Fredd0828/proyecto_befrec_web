@@ -450,16 +450,30 @@ blockquote {
 }
 
 .hero-content {
-    max-width: 680px;
+    max-width: 900px;
 }
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-6xl));
+    font-size: clamp(var(--font-size-2xl), 3.8vw, var(--font-size-5xl));
     font-weight: 700;
     color: var(--color-white);
     margin-bottom: var(--space-sm);
-    line-height: 1.1;
+    line-height: 1.2;
+}
+
+.hero-title-sub {
+    color: rgba(253, 202, 0, 0.82);
+}
+
+.hero-brand {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
 }
 
 .hero-subtitle {

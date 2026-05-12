@@ -28,8 +28,8 @@
 const BEFREC = {
     name: 'Befrec y Asociados SAS',
     url: window.location.origin,
-    whatsapp: '573160444428',
-    email: 'contacto@befrec.com',
+    whatsapp: '573123206293',
+    email: 'pabecontable@gmail.com',
     address: 'Cra 88d 6d 27, Bogotá, Colombia',
     phone: '3160444428',
     mobileBreakpoint: 950,
@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initWhatsAppButton();
     initTestimonialSlider();
+    showCookieBanner();
 });
 
 // ============================================
@@ -405,9 +406,6 @@ function showCookieBanner() {
         banner.remove();
     });
 }
-
-// Mostrar banner de cookies al cargar
-showCookieBanner();
 
 // ============================================
 // UTILIDADES

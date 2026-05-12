@@ -3,6 +3,52 @@
    Paleta de colores rediseñada y fuentes
    ============================================ */
 
+/* ============================================
+   FUENTES LOCALES — Montserrat & Open Sans
+   Variable fonts: un solo archivo cubre todos
+   los pesos (100–900), sin petición a Google
+   ============================================ */
+
+/* Montserrat — Normal */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fuentes/Montserrat,Open_Sans/Montserrat/Montserrat-Variable.woff2') format('woff2'),
+         url('../assets/fuentes/Montserrat,Open_Sans/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Montserrat — Italic */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fuentes/Montserrat,Open_Sans/Montserrat/Montserrat-Italic-Variable.woff2') format('woff2'),
+         url('../assets/fuentes/Montserrat,Open_Sans/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Open Sans — Normal */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../assets/fuentes/Montserrat,Open_Sans/Open_Sans/OpenSans-Variable.woff2') format('woff2'),
+         url('../assets/fuentes/Montserrat,Open_Sans/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: 300 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Open Sans — Italic */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../assets/fuentes/Montserrat,Open_Sans/Open_Sans/OpenSans-Italic-Variable.woff2') format('woff2'),
+         url('../assets/fuentes/Montserrat,Open_Sans/Open_Sans/OpenSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: 300 800;
+    font-style: italic;
+    font-display: swap;
+}
+
 :root {
     /* ============================================
        COLORES PRINCIPALES

@@ -1,4 +1,4 @@
-<!-- ============================================
+﻿<!-- ============================================
      BEFREC Y ASOCIADOS SAS - Página de Inicio
      Asesoría Contable y Tributaria en Colombia
      Diseño profesional · Paleta negro/amarillo
@@ -13,14 +13,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Título optimizado para SEO -->
-    <title>Befrec y Asociados | Asesoría Contable y Tributaria en Colombia</title>
+    <!-- Título optimizado para SEO (keyword primero) -->
+    <title>Asesoría Contable y Tributaria en Colombia | Befrec y Asociados</title>
 
-    <!-- Meta descripción - texto basado en ASEMTRI -->
-    <meta name="description" content="Firma contable digital en Colombia. Servicios contables, tributarios, certificados contables, declaración de renta, estados financieros y trámites empresariales para personas y empresas.">
+    <!-- Meta descripción -->
+    <meta name="description" content="Firma contable digital en Colombia. Declaración de renta, contabilidad para PyMES, outsourcing contable y trámites DIAN para personas naturales y empresas en Bogotá.">
 
     <!-- Palabras clave -->
-    <meta name="keywords" content="asesoría contable Colombia, servicios contables Bogotá, declaración de renta, contabilidad empresas, outsourcing contable, asesoría tributaria, estados financieros, certificados contables">
+    <meta name="keywords" content="asesoría contable Colombia, declaración de renta persona natural, outsourcing contable PyMES, contabilidad Bogotá, trámites DIAN, certificados contables, estados financieros NIIF">
 
     <!-- Autor -->
     <meta name="author" content="Befrec y Asociados">
@@ -28,37 +28,44 @@
     <!-- Robots -->
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph - Redes sociales -->
-    <meta property="og:title" content="Befrec y Asociados | Asesoría Contable y Tributaria">
-    <meta property="og:description" content="Firma contable digital en Colombia. Servicios contables, tributarios y trámites empresariales.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://befrec.com">
-    <meta property="og:image" content="https://bfrec.com/assets/images/og-image.jpg">
-    <meta property="og:locale" content="es_CO">
+    <!-- Theme color para navegadores móviles -->
+    <meta name="theme-color" content="#1c1c1c">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Befrec y Asociados | Asesoría Contable y Tributaria">
-    <meta name="twitter:description" content="Firma contable digital en Colombia. Servicios contables y tributarios profesionales.">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://fredd0828.github.io/proyecto_befrec_web/">
+
+    <!-- Open Graph - Redes sociales -->
+    <meta property="og:title" content="Asesoría Contable y Tributaria en Colombia | Befrec y Asociados">
+    <meta property="og:description" content="Firma contable digital en Colombia. Declaración de renta, contabilidad PyMES, outsourcing contable y trámites DIAN.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fredd0828.github.io/proyecto_befrec_web/">
+    <meta property="og:image" content="https://fredd0828.github.io/proyecto_befrec_web/img/15_Tecnolog_a_Contable_Nube_v2.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Befrec y Asociados - Asesoría Contable Digital en Colombia">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:site_name" content="Befrec y Asociados">
 
     <!-- ============================================
          SEGURIDAD - Cabeceras HTTP
          ============================================ -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- ============================================
          FAVICON Y RECURSOS
          ============================================ -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <!-- Google Fonts - Montserrat y Open Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Preload fuentes locales (variable fonts WOFF2) -->
+    <link rel="preload" as="font" type="font/woff2" href="assets/fuentes/Montserrat,Open_Sans/Montserrat/Montserrat-Variable.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="assets/fuentes/Montserrat,Open_Sans/Open_Sans/OpenSans-Variable.woff2" crossorigin>
+
+    <!-- Preload hero image para LCP rápido -->
+    <link rel="preload" as="image" href="img/15_Tecnolog_a_Contable_Nube_v2.webp" fetchpriority="high">
 
     <!-- Estilos principales -->
     <link rel="stylesheet" href="css/style.css">
@@ -70,18 +77,21 @@
         "@type": "AccountingService",
         "name": "Befrec y Asociados",
         "description": "Firma contable digital en Colombia. Servicios contables, tributarios, certificados contables, declaración de renta, estados financieros y trámites empresariales.",
-        "url": "https://befrec.com",
+        "url": "https://fredd0828.github.io/proyecto_befrec_web/",
         "telephone": "+573123206293",
         "email": "pabecontable@gmail.com",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Cra 88d 6d 27",
             "addressLocality": "Bogotá",
+            "addressRegion": "Cundinamarca",
             "addressCountry": "CO"
         },
         "openingHours": "Mo-Fr 08:00-18:00",
         "priceRange": "$$",
-        "foundingDate": "2015"
+        "foundingDate": "2015",
+        "image": "https://fredd0828.github.io/proyecto_befrec_web/img/15_Tecnolog_a_Contable_Nube_v2.webp",
+        "sameAs": []
     }
     </script>
 </head>
@@ -150,7 +160,9 @@
         <div class="hero-bg">
             <img src="img/15_Tecnolog_a_Contable_Nube_v2.webp"
                  alt="Servicios contables profesionales - Befrec y Asociados"
-                 loading="eager">
+                 loading="eager"
+                 fetchpriority="high"
+                 decoding="async">
         </div>
 
         <!-- Overlay oscuro con degradado -->
@@ -162,14 +174,10 @@
         <!-- Contenido del hero -->
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Befrec y Asociados</h1>
-                <p class="hero-subtitle">
-                    Asesoría <span>Contable</span> y <span>Tributaria</span>
-                </p>
+                <h1 class="hero-title">Asesoría Contable y<br><span class="hero-title-sub">Tributaria en Colombia</span></h1>
                 <p class="hero-description">
-                    Firma contable digital en Colombia. Acompañamos a personas naturales,
-                    independientes, PyMES y empresas con servicios contables, tributarios,
-                    certificados y trámites empresariales.
+                    Acompañamos a personas naturales, independientes, PyMES y empresas
+                    con soluciones contables, tributarias, certificados y trámites empresariales.
                 </p>
                 <div class="hero-buttons">
                     <a href="contacto.html" class="btn btn-primary">
@@ -790,7 +798,7 @@
             <!-- Copyright y créditos -->
             <div class="footer-bottom">
                 <p>
-                    &copy; 2025 <strong>Befrec y Asociados</strong>. Todos los derechos reservados.
+                    &copy; 2026 <strong>Befrec y Asociados</strong>. Todos los derechos reservados.
                 </p>
                 <p class="footer-credits">
                     Diseñado y desarrollado por
