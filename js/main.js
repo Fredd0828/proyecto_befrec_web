@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ============================================
  * BEFREC Y ASOCIADOS SAS - Script Principal
  * Asesoría Contable y Tributaria
@@ -209,31 +209,73 @@ function initFormValidation() {
     });
 }
 
-function handleFormSubmit(e) {
+// URL del backend — ajusta la ruta cuando subas a tu hosting
+const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost/befrec/backend'
+    : '/backend';
+
+async function handleFormSubmit(e) {
     e.preventDefault();
     const form = this;
 
     if (!validateForm(form)) return;
 
-    // Simular envío exitoso
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
+    const submitBtn  = form.querySelector('button[type="submit"]');
+    const successMsg = form.querySelector('.form-success');
+    const errorMsg   = form.querySelector('.form-error-global');
+    const originalText = submitBtn.textContent.trim();
+
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando...';
+    if (errorMsg) errorMsg.style.display = 'none';
 
-    setTimeout(() => {
-        // Mostrar éxito
-        const successMsg = form.querySelector('.form-success');
-        if (successMsg) successMsg.classList.add('show');
+    try {
+        // 1. Obtener token CSRF
+        const tokenRes = await fetch(`${BACKEND_URL}/token.php`, { method: 'GET' });
+        if (!tokenRes.ok) throw new Error('No se pudo obtener el token de seguridad.');
+        const { token: csrfToken } = await tokenRes.json();
 
-        // Limpiar formulario
-        form.reset();
-        clearFormErrors(form);
+        // 2. Recopilar datos del formulario
+        const data = {
+            csrf_token: csrfToken,
+            nombre:     sanitizeInput(form.querySelector('#nombre')?.value   || ''),
+            email:      sanitizeInput(form.querySelector('#email')?.value    || ''),
+            telefono:   sanitizeInput(form.querySelector('#telefono')?.value || ''),
+            servicio:   sanitizeInput(form.querySelector('#servicio')?.value || ''),
+            mensaje:    sanitizeInput(form.querySelector('#mensaje')?.value  || ''),
+            website:    form.querySelector('#website')?.value || '', // honeypot
+        };
 
-        // Restaurar botón
+        // 3. Enviar al backend
+        const res = await fetch(`${BACKEND_URL}/submit-form.php`, {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify(data),
+        });
+
+        const result = await res.json();
+
+        if (res.ok && result.ok) {
+            // Éxito
+            if (successMsg) successMsg.classList.add('show');
+            form.reset();
+            clearFormErrors(form);
+            trackEvent('form_submit', { servicio: data.servicio });
+        } else {
+            throw new Error(result.error || 'Error al enviar el mensaje.');
+        }
+
+    } catch (err) {
+        // Mostrar error global al usuario
+        if (errorMsg) {
+            errorMsg.textContent = err.message || 'Ocurrió un error. Intenta de nuevo o escríbenos por WhatsApp.';
+            errorMsg.style.display = 'block';
+        }
+        console.error('[BEFREC Form Error]', err);
+    } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;
-    }, 1200);
+    }
 }
 
 function validateForm(form) {

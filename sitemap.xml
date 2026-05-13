@@ -1,115 +1,225 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Inicio -->
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/</loc>
+    <loc>https://www.befrec.com/</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- Páginas principales -->
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/negocios.html</loc>
+    <loc>https://www.befrec.com/negocios</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/personas.html</loc>
+    <loc>https://www.befrec.com/personas</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/quienes-somos.html</loc>
+    <loc>https://www.befrec.com/quienes-somos</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/blog.html</loc>
+    <loc>https://www.befrec.com/blog</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/contacto.html</loc>
+    <loc>https://www.befrec.com/contacto</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
+  <!-- Servicios para Negocios -->
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/servicios/contabilidad.html</loc>
+    <loc>https://www.befrec.com/servicios/contabilidad</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/servicios/estados-financieros.html</loc>
+    <loc>https://www.befrec.com/servicios/estados-financieros</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/servicios/revisoria-fiscal.html</loc>
+    <loc>https://www.befrec.com/servicios/revisoria-fiscal</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/servicios/constitucion-empresas.html</loc>
+    <loc>https://www.befrec.com/servicios/constitucion-empresas</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/servicios/tramites-dian.html</loc>
+    <loc>https://www.befrec.com/servicios/tramites-dian</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/servicios/outsourcing-contable.html</loc>
+    <loc>https://www.befrec.com/servicios/outsourcing-contable</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
+  <!-- Servicios para Personas -->
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/servicios/declaracion-renta.html</loc>
+    <loc>https://www.befrec.com/servicios/declaracion-renta</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/servicios/certificados-contables.html</loc>
+    <loc>https://www.befrec.com/servicios/certificados-contables</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/servicios/certificado-ingresos.html</loc>
+    <loc>https://www.befrec.com/servicios/certificado-ingresos</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://fredd0828.github.io/proyecto_befrec_web/servicios/dependencia-economica.html</loc>
+    <loc>https://www.befrec.com/servicios/dependencia-economica</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Blog: artículos recientes -->
+  <url>
+    <loc>https://www.befrec.com/blog/novedades-fiscales-2026</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.befrec.com/blog/decretos-reglamentarios-2026</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.befrec.com/blog/calendario-tributario-2026</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.befrec.com/blog/tips-gestion-financiera-pyme</loc>
+    <lastmod>2025-04-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.befrec.com/blog/declaracion-renta-2025-guia</loc>
+    <lastmod>2025-04-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.befrec.com/blog/errores-comunes-contabilidad</loc>
+    <lastmod>2025-04-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.befrec.com/blog/declaracion-renta-primera-vez</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.befrec.com/blog/obligados-declarar-renta</loc>
+    <lastmod>2025-02-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.befrec.com/blog/certificado-ingresos-retenciones</loc>
+    <lastmod>2025-02-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.befrec.com/blog/contabilidad-pequenas-empresas</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.befrec.com/blog/deducciones-declaracion-renta</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.befrec.com/blog/obligados-contabilidad-colombia</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.befrec.com/blog/demostrar-ingresos-creditos</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.befrec.com/blog/outsourcing-contable-pymes</loc>
+    <lastmod>2024-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.befrec.com/blog/certificado-ingresos</loc>
+    <lastmod>2024-11-10</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 

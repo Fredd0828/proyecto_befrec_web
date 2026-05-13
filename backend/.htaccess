@@ -1,0 +1,26 @@
+# ============================================
+# BEFREC - Protección carpeta backend
+# ============================================
+
+# Denegar acceso directo a archivos de configuración
+<FilesMatch "^(config|db|security)\.php$">
+    Require all denied
+</FilesMatch>
+
+# Denegar acceso a archivos SQL
+<FilesMatch "\.sql$">
+    Require all denied
+</FilesMatch>
+
+# Solo permitir acceso a los endpoints públicos
+<FilesMatch "^(token|submit-form)\.php$">
+    Require all granted
+</FilesMatch>
+
+# Deshabilitar listado de directorio
+Options -Indexes
+
+# Forzar HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

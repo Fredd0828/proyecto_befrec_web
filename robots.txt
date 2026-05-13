@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
-Sitemap: https://fredd0828.github.io/proyecto_befrec_web/sitemap.xml
+Sitemap: https://www.befrec.com/sitemap.xml
