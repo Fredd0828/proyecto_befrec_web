@@ -9,6 +9,7 @@
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/security.php';
+require_once __DIR__ . '/mailer.php';
 
 // Cabeceras
 setCorsHeaders();
@@ -173,11 +174,14 @@ function enviarNotificacion(
     </html>
     ";
 
-    $headers  = "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-    $headers .= "From: " . MAIL_NAME . " <" . MAIL_FROM . ">\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+    $enviado = enviarEmailSMTP(MAIL_TO, $asunto, $cuerpo, $email);
 
-    @mail(MAIL_TO, $asunto, $cuerpo, $headers);
+    if (!$enviado) {
+        // Si SMTP falla, intentar mail() como respaldo
+        $headers  = "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+        $headers .= "From: " . MAIL_NAME . " <" . SMTP_USER . ">\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        @mail(MAIL_TO, $asunto, $cuerpo, $headers, '-f' . SMTP_USER);
+    }
 }
