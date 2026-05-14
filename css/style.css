@@ -1814,131 +1814,19 @@ blockquote {
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* ============================================
-   CUSTOM SELECT - Dropdown consistente
-   (reemplaza visualmente el <select> nativo,
-    funciona igual en Chrome / Firefox / Safari / Edge)
-   ============================================ */
-.custom-select {
-    position: relative;
-    width: 100%;
-    font-family: var(--font-body);
-}
-
-.custom-select-trigger {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
-    padding: 0.875rem 1rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: var(--radius);
-    color: #ffffff;
-    font-family: inherit;
-    font-size: var(--font-size-base);
-    text-align: left;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-}
-
-.custom-select-trigger:hover {
-    border-color: rgba(255, 255, 255, 0.4);
-    background-color: rgba(255, 255, 255, 0.15);
-}
-
-.custom-select-trigger:focus-visible,
-.custom-select.open .custom-select-trigger {
-    outline: none;
-    border-color: var(--color-yellow);
-    background-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 0 3px rgba(254, 228, 2, 0.15);
-}
-
-.custom-select-trigger.is-placeholder .custom-select-text {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.custom-select-arrow {
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.6);
-    transition: transform var(--transition-fast);
-    flex-shrink: 0;
-}
-
-.custom-select.open .custom-select-arrow {
-    transform: rotate(180deg);
-    color: var(--color-yellow);
-}
-
-.custom-select-options {
-    position: absolute;
-    top: calc(100% + 6px);
-    left: 0;
-    right: 0;
-    z-index: 100;
-    list-style: none;
-    margin: 0;
-    padding: 0.375rem;
+/* Opciones del select del formulario de contacto:
+   fondo oscuro, texto blanco, seleccion amarillo dorado */
+.contacto .form-input option,
+.contacto select.form-input option {
     background-color: #1e1e1e;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: var(--radius);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
-    max-height: 280px;
-    overflow-y: auto;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-6px);
-    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+    color: #ffffff;
 }
 
-.custom-select.open .custom-select-options {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.custom-select-option {
-    padding: 0.625rem 0.875rem;
-    border-radius: calc(var(--radius) - 4px);
-    color: rgba(255, 255, 255, 0.85);
-    font-size: var(--font-size-base);
-    cursor: pointer;
-    transition: background-color 0.12s ease, color 0.12s ease;
-    outline: none;
-}
-
-.custom-select-option.placeholder {
-    color: rgba(255, 255, 255, 0.5);
-    font-style: italic;
-}
-
-.custom-select-option:hover,
-.custom-select-option:focus {
-    background-color: rgba(254, 228, 2, 0.12);
-    color: var(--color-yellow);
-}
-
-.custom-select-option.selected {
-    background-color: rgba(254, 228, 2, 0.18);
-    color: var(--color-yellow);
+.contacto .form-input option:checked,
+.contacto select.form-input option:checked {
+    background-color: var(--color-yellow);
+    color: #1a1a1a;
     font-weight: 600;
-}
-
-/* Scrollbar limpio en el dropdown */
-.custom-select-options::-webkit-scrollbar {
-    width: 6px;
-}
-.custom-select-options::-webkit-scrollbar-track {
-    background: transparent;
-}
-.custom-select-options::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-}
-.custom-select-options::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.35);
 }
 
 .contacto .form-input:hover,
@@ -2936,13 +2824,22 @@ blockquote {
     gap: var(--space-xl); 
 }
 
-.sobre-card { 
+.sobre-card {
     background: linear-gradient(145deg, #252525 0%, #1a1a1a 100%);
-    padding: var(--space-2xl); 
+    padding: var(--space-2xl);
     border-radius: var(--radius-xl);
     border: 1px solid rgba(254, 228, 2, 0.2);
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
     transition: all var(--transition-base);
+    /* Layout flexible para alinear el botón al fondo */
+    display: flex;
+    flex-direction: column;
+}
+
+/* El botón se empuja al final de la tarjeta → mismo alto en todas */
+.sobre-card > .btn {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .sobre-card::before {
