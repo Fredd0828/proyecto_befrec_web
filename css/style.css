@@ -861,6 +861,228 @@ blockquote {
     color: var(--color-yellow);
 }
 
+/* ============================================
+   SALUDO DE LA FUNDADORA
+   ============================================ */
+.saludo-fundadora {
+    position: relative;
+    background: linear-gradient(145deg, #1c1c1c 0%, #141414 100%);
+    border: 1px solid rgba(254, 228, 2, 0.15);
+    border-radius: var(--radius-xl);
+    padding: var(--space-3xl) var(--space-2xl);
+    margin-bottom: var(--space-4xl);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.saludo-fundadora::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--color-yellow), var(--color-gold));
+}
+
+.saludo-quote-mark {
+    font-family: Georgia, serif;
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--color-yellow);
+    opacity: 0.4;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+
+.saludo-texto {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: var(--font-size-lg);
+    line-height: 1.75;
+    margin-bottom: var(--space-md);
+    max-width: 880px;
+}
+
+.saludo-texto strong {
+    color: var(--color-yellow);
+    font-weight: 600;
+}
+
+.saludo-firma {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    font-size: var(--font-size-base);
+    margin-top: var(--space-lg);
+    margin-bottom: 0;
+}
+
+/* ============================================
+   NUESTRO EQUIPO
+   ============================================ */
+.equipo-section {
+    margin-bottom: var(--space-4xl);
+}
+
+.equipo-header {
+    margin-bottom: var(--space-2xl);
+}
+
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+}
+
+.equipo-card {
+    background: linear-gradient(145deg, #232323 0%, #181818 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    text-align: center;
+    transition: transform var(--transition-base),
+                border-color var(--transition-base),
+                box-shadow var(--transition-base);
+}
+
+.equipo-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(254, 228, 2, 0.4);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+}
+
+.equipo-avatar {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto var(--space-md);
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-yellow), var(--color-gold));
+    color: #1a1a1a;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: -1px;
+    box-shadow: 0 8px 24px rgba(254, 228, 2, 0.25);
+}
+
+.equipo-nombre {
+    color: #ffffff;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.equipo-rol {
+    color: var(--color-yellow);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.equipo-credenciales {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: var(--space-md);
+}
+
+.equipo-credenciales li {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: var(--font-size-base);
+    line-height: 1.55;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+}
+
+.equipo-credenciales li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.95rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-yellow);
+}
+
+.equipo-credenciales strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Modalidad de trabajo */
+.modalidad-trabajo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    background: rgba(254, 228, 2, 0.05);
+    border: 1px solid rgba(254, 228, 2, 0.2);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+}
+
+.modalidad-icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(254, 228, 2, 0.15);
+    color: var(--color-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalidad-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.modalidad-trabajo h4 {
+    color: #ffffff;
+    font-size: var(--font-size-lg);
+    margin-bottom: 0.35rem;
+}
+
+.modalidad-trabajo p {
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.65;
+    margin: 0;
+}
+
+.modalidad-trabajo strong {
+    color: var(--color-yellow);
+}
+
+.equipo-estadisticas {
+    display: flex;
+    gap: var(--space-3xl);
+    padding: var(--space-xl);
+    background: linear-gradient(145deg, #1c1c1c, #141414);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .saludo-fundadora { padding: var(--space-2xl) var(--space-lg); }
+    .saludo-texto { font-size: var(--font-size-base); }
+    .saludo-quote-mark { font-size: 3.5rem; }
+    .equipo-grid { grid-template-columns: 1fr; }
+    .modalidad-trabajo { flex-direction: column; text-align: center; }
+    .equipo-estadisticas { gap: var(--space-xl); }
+}
+
 .historia-card .stat-label {
     font-size: var(--font-size-sm);
     color: rgba(255, 255, 255, 0.7);
@@ -1592,16 +1814,131 @@ blockquote {
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* Opciones del select — fondo oscuro en el desplegable */
-.contacto .form-select option {
-    background-color: #1e1e1e;
-    color: #ffffff;
+/* ============================================
+   CUSTOM SELECT - Dropdown consistente
+   (reemplaza visualmente el <select> nativo,
+    funciona igual en Chrome / Firefox / Safari / Edge)
+   ============================================ */
+.custom-select {
+    position: relative;
+    width: 100%;
+    font-family: var(--font-body);
 }
 
-.contacto .form-select option:checked,
-.contacto .form-select option:hover {
-    background-color: #2d2d2d;
+.custom-select-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.875rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: var(--font-size-base);
+    text-align: left;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.custom-select-trigger:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.custom-select-trigger:focus-visible,
+.custom-select.open .custom-select-trigger {
+    outline: none;
+    border-color: var(--color-yellow);
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(254, 228, 2, 0.15);
+}
+
+.custom-select-trigger.is-placeholder .custom-select-text {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.custom-select-arrow {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    transition: transform var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.custom-select.open .custom-select-arrow {
+    transform: rotate(180deg);
     color: var(--color-yellow);
+}
+
+.custom-select-options {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    z-index: 100;
+    list-style: none;
+    margin: 0;
+    padding: 0.375rem;
+    background-color: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    max-height: 280px;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+}
+
+.custom-select.open .custom-select-options {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.custom-select-option {
+    padding: 0.625rem 0.875rem;
+    border-radius: calc(var(--radius) - 4px);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: background-color 0.12s ease, color 0.12s ease;
+    outline: none;
+}
+
+.custom-select-option.placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+.custom-select-option:hover,
+.custom-select-option:focus {
+    background-color: rgba(254, 228, 2, 0.12);
+    color: var(--color-yellow);
+}
+
+.custom-select-option.selected {
+    background-color: rgba(254, 228, 2, 0.18);
+    color: var(--color-yellow);
+    font-weight: 600;
+}
+
+/* Scrollbar limpio en el dropdown */
+.custom-select-options::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-select-options::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-select-options::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+.custom-select-options::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.35);
 }
 
 .contacto .form-input:hover,
@@ -2784,10 +3121,25 @@ blockquote {
     border-bottom: none;
 }
 
-.sobre-contacto-list li strong { 
+.sobre-contacto-list li strong {
     color: var(--color-yellow);
-    font-weight: 700; 
+    font-weight: 700;
     min-width: 80px;
+}
+
+/* Links (teléfonos, emails) dentro del bloque Encuéntranos */
+.sobre-contacto-list li a {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+    word-break: break-word;
+}
+
+.sobre-contacto-list li a:hover,
+.sobre-contacto-list li a:focus {
+    color: var(--color-yellow);
+    border-bottom-color: var(--color-yellow);
 }
 
 .sobre-beneficios { 
