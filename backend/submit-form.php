@@ -168,7 +168,7 @@ function enviarNotificacion(
         </div>
       </div>
       <p style='color:#bbb;font-size:12px;text-align:center;margin-top:16px;'>
-        Befrec y Asociados · Cra 88d 6d 27, Bogotá · pabecontable@gmail.com
+        Befrec y Asociados · Cra 88d 6d 27, Bogotá · contacto@befrec.com
       </p>
     </body>
     </html>

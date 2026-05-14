@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ============================================
  * BEFREC Y ASOCIADOS SAS - Script Principal
  * Asesoría Contable y Tributaria
@@ -29,7 +29,7 @@ const BEFREC = {
     name: 'Befrec y Asociados SAS',
     url: window.location.origin,
     whatsapp: '573123206293',
-    email: 'pabecontable@gmail.com',
+    email: 'contacto@befrec.com',
     address: 'Cra 88d 6d 27, Bogotá, Colombia',
     phone: '3160444428',
     mobileBreakpoint: 950,
